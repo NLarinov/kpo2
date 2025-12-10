@@ -1,7 +1,7 @@
 # Микросервисная система проверки студенческих работ
 
-![CI](https://github.com/yourusername/kpo2/workflows/CI%20-%20Build%20and%20Test/badge.svg)
-![Docker Build](https://github.com/yourusername/kpo2/workflows/Docker%20Build%20and%20Test/badge.svg)
+![CI](https://github.com/NLarinov/kpo2/workflows/CI%20-%20Build%20and%20Test/badge.svg)
+![Docker Build](https://github.com/NLarinov/kpo2/workflows/Docker%20Build%20and%20Test/badge.svg)
 
 ## Описание
 
