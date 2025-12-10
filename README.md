@@ -1,7 +1,13 @@
 # Микросервисная система проверки студенческих работ
 
-![CI](https://github.com/NLarinov/kpo2/workflows/CI%20-%20Build%20and%20Test/badge.svg)
-![Docker Build](https://github.com/NLarinov/kpo2/workflows/Docker%20Build%20and%20Test/badge.svg)
+![CI](https://github.com/NLarinov/kpo2/actions/workflows/ci.yml/badge.svg)
+![Docker Build](https://github.com/NLarinov/kpo2/actions/workflows/docker-build.yml/badge.svg)
+
+![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-24.0-2496ED?logo=docker&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-512BD4?logo=dotnet&logoColor=white)
+![Entity Framework](https://img.shields.io/badge/Entity%20Framework-8.0-512BD4?logo=dotnet&logoColor=white)
+![Ocelot](https://img.shields.io/badge/Ocelot-23.1-FF6B6B?logo=dotnet&logoColor=white)
 
 ## Описание
 
