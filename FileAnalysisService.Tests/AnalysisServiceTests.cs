@@ -3,6 +3,7 @@ using FileAnalysisService.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Shared.Models;
@@ -13,6 +14,7 @@ namespace FileAnalysisService.Tests;
 public class AnalysisServiceTests
 {
     private readonly AnalysisDbContext _context;
+    private readonly Mock<IServiceScopeFactory> _serviceScopeFactoryMock;
     private readonly Mock<IWebHostEnvironment> _environmentMock;
     private readonly Mock<ILogger<AnalysisService>> _loggerMock;
     private readonly Mock<IHttpClientFactory> _httpClientFactoryMock;
@@ -26,6 +28,16 @@ public class AnalysisServiceTests
             .Options;
         _context = new AnalysisDbContext(options);
 
+        _serviceScopeFactoryMock = new Mock<IServiceScopeFactory>();
+        var serviceProviderMock = new Mock<IServiceProvider>();
+        var serviceScopeMock = new Mock<IServiceScope>();
+        
+        serviceScopeMock.Setup(s => s.ServiceProvider).Returns(serviceProviderMock.Object);
+        serviceScopeMock.Setup(s => s.Dispose());
+        _serviceScopeFactoryMock.Setup(s => s.CreateScope()).Returns(serviceScopeMock.Object);
+        
+        serviceProviderMock.Setup(sp => sp.GetService(typeof(AnalysisDbContext))).Returns(_context);
+
         _environmentMock = new Mock<IWebHostEnvironment>();
         _environmentMock.Setup(e => e.ContentRootPath).Returns("/test");
 
@@ -34,7 +46,7 @@ public class AnalysisServiceTests
         _configurationMock = new Mock<IConfiguration>();
 
         _service = new AnalysisService(
-            _context,
+            _serviceScopeFactoryMock.Object,
             _environmentMock.Object,
             _httpClientFactoryMock.Object,
             _loggerMock.Object,
