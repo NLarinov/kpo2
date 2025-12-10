@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStoringService", "FileStoringService\FileStoringService.csproj", "{674D01F9-F3E3-4C6A-BC92-071A6D41C416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileAnalysisService", "FileAnalysisService\FileAnalysisService.csproj", "{52E2EC87-F923-4427-8509-7EBA7B791960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{44056FC6-1799-415A-80FA-DB9E1DBE787B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Models", "Shared.Models\Shared.Models.csproj", "{63ED1DC8-001E-4DD9-9A49-21450DBB44A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileStoringService.Tests", "FileStoringService.Tests\FileStoringService.Tests.csproj", "{F231E20A-088E-4862-BB01-2F0956B00CF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileAnalysisService.Tests", "FileAnalysisService.Tests\FileAnalysisService.Tests.csproj", "{00C68780-C0C1-4065-9797-1574E736D349}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{674D01F9-F3E3-4C6A-BC92-071A6D41C416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674D01F9-F3E3-4C6A-BC92-071A6D41C416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674D01F9-F3E3-4C6A-BC92-071A6D41C416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674D01F9-F3E3-4C6A-BC92-071A6D41C416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E2EC87-F923-4427-8509-7EBA7B791960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E2EC87-F923-4427-8509-7EBA7B791960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E2EC87-F923-4427-8509-7EBA7B791960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E2EC87-F923-4427-8509-7EBA7B791960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44056FC6-1799-415A-80FA-DB9E1DBE787B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44056FC6-1799-415A-80FA-DB9E1DBE787B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44056FC6-1799-415A-80FA-DB9E1DBE787B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44056FC6-1799-415A-80FA-DB9E1DBE787B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63ED1DC8-001E-4DD9-9A49-21450DBB44A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63ED1DC8-001E-4DD9-9A49-21450DBB44A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63ED1DC8-001E-4DD9-9A49-21450DBB44A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63ED1DC8-001E-4DD9-9A49-21450DBB44A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F231E20A-088E-4862-BB01-2F0956B00CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F231E20A-088E-4862-BB01-2F0956B00CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F231E20A-088E-4862-BB01-2F0956B00CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F231E20A-088E-4862-BB01-2F0956B00CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C68780-C0C1-4065-9797-1574E736D349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C68780-C0C1-4065-9797-1574E736D349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C68780-C0C1-4065-9797-1574E736D349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C68780-C0C1-4065-9797-1574E736D349}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

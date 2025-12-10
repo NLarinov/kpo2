@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  filestoringservice:
+    build:
+      context: .
+      dockerfile: FileStoringService/Dockerfile
+    container_name: filestoringservice
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - AnalysisServiceUrl=http://fileanalysisservice/api
+    volumes:
+      - filestorage_uploads:/app/uploads
+    networks:
+      - microservices-network
+
+  fileanalysisservice:
+    build:
+      context: .
+      dockerfile: FileAnalysisService/Dockerfile
+    container_name: fileanalysisservice
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - FileStorageServiceUrl=http://filestoringservice/api
+    volumes:
+      - fileanalysis_reports:/app/reports
+    networks:
+      - microservices-network
+    depends_on:
+      - filestoringservice
+
+  apigateway:
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    container_name: apigateway
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    networks:
+      - microservices-network
+    depends_on:
+      - filestoringservice
+      - fileanalysisservice
+
+networks:
+  microservices-network:
+    driver: bridge
+
+volumes:
+  filestorage_uploads:
+  fileanalysis_reports:
+
